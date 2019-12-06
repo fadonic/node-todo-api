@@ -1,0 +1,149 @@
+
+C:\Users\User>cd Documents
+
+C:\Users\User\Documents>cd "Node Apps"
+
+C:\Users\User\Documents\Node Apps>cd node-todo-api
+
+C:\Users\User\Documents\Node Apps\node-todo-api>heroku create
+Creating app... !
+ !    Invalid credentials provided.
+heroku: Press any key to open up the browser to login or q to exit:
+Opening browser to https://cli-auth.heroku.com/auth/browser/0797f89d-c57b-484a-acb6-546031ee8cef
+Logging in... done
+Logged in as fridayameh85@gmail.com
+Creating app... done, ⬢ powerful-sea-47962
+https://powerful-sea-47962.herokuapp.com/ | https://git.heroku.com/powerful-sea-47962.git
+
+C:\Users\User\Documents\Node Apps\node-todo-api>heroku addons:create mongolab:sandbox
+Creating mongolab:sandbox on ⬢ powerful-sea-47962... !
+ !    Please verify your account to install this add-on plan (please enter a credit card) For more information, see
+ !    https://devcenter.heroku.com/categories/billing Verify now at https://heroku.com/verify
+
+C:\Users\User\Documents\Node Apps\node-todo-api>heroku addons:create mongolab:sandbox
+Creating mongolab:sandbox on ⬢ powerful-sea-47962... free
+Welcome to mLab.  Your new subscription is being created and will be available shortly.  Please consult the mLab Add-on Admin UI to check on its progress.
+Created mongolab-convex-73052 as MONGODB_URI
+Use heroku addons:docs mongolab to view documentation
+
+C:\Users\User\Documents\Node Apps\node-todo-api>heroku config
+=== powerful-sea-47962 Config Vars
+MONGODB_URI: mongodb://heroku_b4pqtkzm:klic8qsitru0jm3bhmnhpe2e8n@ds353378.mlab.com:53378/heroku_b4pqtkzm
+
+C:\Users\User\Documents\Node Apps\node-todo-api>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   server/db/mongoose.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\User\Documents\Node Apps\node-todo-api>git add .
+
+C:\Users\User\Documents\Node Apps\node-todo-api>git commit -m "SetUp app for heroku"
+[master 178635c] SetUp app for heroku
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\User\Documents\Node Apps\node-todo-api>git push heroku master
+Enumerating objects: 19, done.
+Counting objects: 100% (19/19), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (19/19), 2.87 KiB | 154.00 KiB/s, done.
+Total 19 (delta 2), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Node.js app detected
+remote:
+remote: -----> Creating runtime environment
+remote:
+remote:        NPM_CONFIG_LOGLEVEL=error
+remote:        NODE_ENV=production
+remote:        NODE_MODULES_CACHE=true
+remote:        NODE_VERBOSE=false
+remote:
+remote: -----> Installing binaries
+remote:        engines.node (package.json):  unspecified
+remote:        engines.npm (package.json):   unspecified (use default)
+remote:
+remote:        Resolving node version 12.x...
+remote:        Downloading and installing node 12.13.1...
+remote:        Using default npm version: 6.12.1
+remote:
+remote: -----> Installing dependencies
+remote:        Installing node modules (package.json)
+remote:        added 70 packages from 48 contributors and audited 194 packages in 3.35s
+remote:        found 0 vulnerabilities
+remote:
+remote:
+remote: -----> Build
+remote:
+remote: -----> Pruning devDependencies
+remote:        audited 194 packages in 0.827s
+remote:        found 0 vulnerabilities
+remote:
+remote:
+remote: -----> Caching build
+remote:        - node_modules
+remote:
+remote: -----> Build succeeded!
+remote: -----> Discovering process types
+remote:        Procfile declares types     -> (none)
+remote:        Default types for buildpack -> web
+remote:
+remote: -----> Compressing...
+remote:        Done: 22.8M
+remote: -----> Launching...
+remote:        Released v5
+remote:        https://powerful-sea-47962.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/powerful-sea-47962.git
+ * [new branch]      master -> master
+
+C:\Users\User\Documents\Node Apps\node-todo-api>heroku logs
+2019-12-06T10:26:12.881541+00:00 app[api]: Initial release by user fridayameh85@gmail.com
+2019-12-06T10:26:12.881541+00:00 app[api]: Release v1 created by user fridayameh85@gmail.com
+2019-12-06T10:26:13.007874+00:00 app[api]: Enable Logplex by user fridayameh85@gmail.com
+2019-12-06T10:26:13.007874+00:00 app[api]: Release v2 created by user fridayameh85@gmail.com
+2019-12-06T10:32:26.807648+00:00 app[api]: Running release v3 commands by user fridayameh85@gmail.com
+2019-12-06T10:32:26.820857+00:00 app[api]: @ref:mongolab-convex-73052 completed provisioning, setting MONGODB_URI. by user fridayameh85@gmail.com
+2019-12-06T10:32:26.807648+00:00 app[api]: Attach MONGODB (@ref:mongolab-convex-73052) by user fridayameh85@gmail.com
+2019-12-06T10:32:26.820857+00:00 app[api]: Release v4 created by user fridayameh85@gmail.com
+2019-12-06T10:37:57.000000+00:00 app[api]: Build started by user fridayameh85@gmail.com
+2019-12-06T10:38:12.019636+00:00 app[api]: Release v5 created by user fridayameh85@gmail.com
+2019-12-06T10:38:12.019636+00:00 app[api]: Deploy 178635c0 by user fridayameh85@gmail.com
+2019-12-06T10:38:12.039483+00:00 app[api]: Scaled to web@1:Free by user fridayameh85@gmail.com
+2019-12-06T10:38:12.000000+00:00 app[api]: Build succeeded
+2019-12-06T10:38:14.361459+00:00 heroku[web.1]: Starting process with command `npm start`
+2019-12-06T10:38:16.381495+00:00 app[web.1]:
+2019-12-06T10:38:16.381662+00:00 app[web.1]: > todo-api@1.0.0 start /app
+2019-12-06T10:38:16.381664+00:00 app[web.1]: > node server/server.js
+2019-12-06T10:38:16.381671+00:00 app[web.1]:
+2019-12-06T10:38:16.979322+00:00 app[web.1]: (node:23) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+2019-12-06T10:38:16.980188+00:00 app[web.1]: (node:23) DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+2019-12-06T10:38:16.980971+00:00 app[web.1]: Server Started on port 5652
+2019-12-06T10:38:17.582713+00:00 heroku[web.1]: State changed from starting to up
+
+C:\Users\User\Documents\Node Apps\node-todo-api>git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+C:\Users\User\Documents\Node Apps\node-todo-api>git push origin master
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 471 bytes | 235.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/fadonic/node-todo-api.git
+   b6db59f..178635c  master -> master
+
+C:\Users\User\Documents\Node Apps\node-todo-api>https://powerful-sea-47962.herokuapp.com/todos
